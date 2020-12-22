@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>
+            Learn Coding with Timedoor
+        </title>
+    </head>
+        <style>
+            div {
+                padding-top: 100px;
+                text-align: center
+            }
+           
+            button {
+                background-color :red;
+                color: white;
+                text-align: center;
+                font-size: 20px;
+            }
+            
+        </style>
+    <body>
+       
+        <div class="center">
+            <h1 id="name"> </h1>
+            <h2>Let's Change the Color!</h2>
+            <button >Click Me!</button>
+            <h3 id="colorName"> </h3>
+        </div>   
+    </body>
+    <script>
+        var name=prompt("What's Your Name?")
+        document.getElementById("name").innerHTML = "Hello " + name +"!";
+        
+        const button = document.querySelector('button')
+        const body = document.querySelector('body')
+        var colors = ['red', 'green', 'blue', 'yellow', 'pink', 'purple']
+
+        body.style.backgroundColor = 'violet'
+        button.addEventListener('click', changeBackground)
+
+        function changeBackground(){
+            var colorIndex= parseInt(Math.random()*colors.length)
+            body.style.backgroundColor = colors[colorIndex]
+            document.getElementById("colorName").innerHTML = "This is "+colors[colorIndex]
+        }    
+
+    </script>
+</html>
